@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.9.34526.213
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "3DCurves", "3DCurves\3DCurves.vcxproj", "{A3A41A20-2FB0-43A2-8BEE-89E7CFB0CD06}"
+	ProjectSection(ProjectDependencies) = postProject
+		{408E2DA5-80F1-4034-B88A-1461FCB705D9} = {408E2DA5-80F1-4034-B88A-1461FCB705D9}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "3DCurvesTest", "3DCurvesTest\3DCurvesTest.vcxproj", "{408E2DA5-80F1-4034-B88A-1461FCB705D9}"
 EndProject
