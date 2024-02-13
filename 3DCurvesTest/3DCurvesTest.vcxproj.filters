@@ -30,6 +30,12 @@
     <ClCompile Include="..\3DCurves\CHelix.cpp">
       <Filter>Исходные файлы\Curves</Filter>
     </ClCompile>
+    <ClCompile Include="CurvesControllerTest.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3DCurves\CCurvesController.cpp">
+      <Filter>Исходные файлы\Curves</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

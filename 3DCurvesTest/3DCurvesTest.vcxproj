@@ -152,8 +152,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\3DCurves\CCircle.cpp" />
+    <ClCompile Include="..\3DCurves\CCurvesController.cpp" />
     <ClCompile Include="..\3DCurves\CEllipse.cpp" />
     <ClCompile Include="..\3DCurves\CHelix.cpp" />
+    <ClCompile Include="CurvesControllerTest.cpp" />
     <ClCompile Include="CurvesTest.cpp" />
   </ItemGroup>
   <ItemGroup>
