@@ -28,6 +28,8 @@ public:
 	void SortCircleCurves() noexcept;
 
 private:
+	void Reset() noexcept;
+
 	std::ostream& m_output;
 	std::vector<std::shared_ptr<ICurve3D>> m_curves;
 	std::vector<std::shared_ptr<CCircle>> m_circleCurves;

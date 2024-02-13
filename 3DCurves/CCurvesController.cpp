@@ -14,15 +14,12 @@ CCurvesController::CCurvesController(std::ostream& output)
 
 void CCurvesController::GenerateRandomCurves()
 {
-	if (m_curves.size() != 0)
-	{
-		m_curves.clear();
-	}
+	Reset();
 
 	std::random_device rd;
 	std::mt19937 gen(rd());
 
-	std::uniform_int_distribution<> randomCountCurvesDist(10, 20);
+	std::uniform_int_distribution<> randomCountCurvesDist(1, 300);
 	std::uniform_int_distribution<> randomCurvesTypeDist(0, 2);
 	std::uniform_real_distribution<double> randomRadiusDist(0, 20);
 	std::uniform_real_distribution<double> randomStepDist(0, 15);
@@ -114,4 +111,11 @@ void CCurvesController::SortCircleCurves() noexcept
 			return lh->GetRadius() < rh->GetRadius();
 		}
 	);
+}
+
+void CCurvesController::Reset() noexcept
+{
+	m_curves.clear();
+	m_circleCurves.clear();
+	m_sumRadiiCurvesCircle = 0;
 }
