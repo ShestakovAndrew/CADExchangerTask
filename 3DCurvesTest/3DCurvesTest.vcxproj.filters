@@ -13,5 +13,25 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Исходные файлы\Curves">
+      <UniqueIdentifier>{dad44350-f4c5-4fff-8b67-b961ca799b0f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CurvesTest.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3DCurves\CCircle.cpp">
+      <Filter>Исходные файлы\Curves</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3DCurves\CEllipse.cpp">
+      <Filter>Исходные файлы\Curves</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3DCurves\CHelix.cpp">
+      <Filter>Исходные файлы\Curves</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>
