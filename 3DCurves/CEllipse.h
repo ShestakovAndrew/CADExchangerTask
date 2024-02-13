@@ -9,6 +9,7 @@ public:
 
 	CPoint3D Get3DPoint(double t) const override;
 	CVector3D GetFirstDerivative(double t) const override;
+	std::string ToString() const override;
 
 	double GetHorizontalRadius() const noexcept;
 	double GetVerticalRadius() const noexcept;

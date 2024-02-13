@@ -1,4 +1,5 @@
 #include <numbers>
+#include <sstream>
 
 #include "CHelix.h"
 #include "CPoint3D.h"
@@ -39,4 +40,16 @@ double CHelix::GetRadius() const noexcept
 double CHelix::GetStep() const noexcept
 {
 	return m_step;
+}
+
+std::string CHelix::ToString() const
+{
+	std::stringstream sstream;
+
+	sstream
+		<< "Type curve: Helix" << std::endl
+		<< "Radius: " << GetRadius() << std::endl
+		<< "Step: " << GetStep() << std::endl;
+
+	return sstream.str();
 }

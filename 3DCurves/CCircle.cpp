@@ -1,4 +1,5 @@
 #include "CCircle.h"
+#include <sstream>
 
 CCircle::CCircle(double radius) : m_radius(radius)
 {
@@ -31,4 +32,15 @@ CVector3D CCircle::GetFirstDerivative(double t) const
 double CCircle::GetRadius() const noexcept
 {
 	return m_radius;
+}
+
+std::string CCircle::ToString() const
+{
+	std::stringstream sstream;
+
+	sstream
+		<< "Type curve: Circle" << std::endl
+		<< "Radius: " << GetRadius() << std::endl;
+
+	return sstream.str();
 }

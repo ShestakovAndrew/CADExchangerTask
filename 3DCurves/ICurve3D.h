@@ -9,5 +9,6 @@ public:
 
 	virtual CPoint3D Get3DPoint(double t) const = 0;
 	virtual CVector3D GetFirstDerivative(double t) const = 0;
+	virtual std::string ToString() const = 0;
 };
 

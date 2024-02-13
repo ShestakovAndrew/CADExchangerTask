@@ -7,10 +7,11 @@
 class CCurvesController
 {
 public:
-	CCurvesController() = default;
+	CCurvesController(std::ostream& output);
 
 	void GenerateRandomCurves();
 	size_t GetCountCurves() const noexcept;
+	void PrintCurvesInfo(double t) const noexcept;
 
 private:
 	enum class CurveType
@@ -20,6 +21,7 @@ private:
 		HELIX
 	};
 
+	std::ostream& m_output;
 	std::vector<std::shared_ptr<ICurve3D>> m_curves;
 };
 

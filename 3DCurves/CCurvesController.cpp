@@ -6,6 +6,10 @@
 #include "CEllipse.h"
 #include "CHelix.h"
 
+CCurvesController::CCurvesController(std::ostream& output) : m_output(output)
+{
+}
+
 void CCurvesController::GenerateRandomCurves()
 {
 	if (m_curves.size() != 0)
@@ -59,4 +63,22 @@ void CCurvesController::GenerateRandomCurves()
 size_t CCurvesController::GetCountCurves() const noexcept
 {
 	return m_curves.size();
+}
+
+void CCurvesController::PrintCurvesInfo(double t) const noexcept
+{
+	if (m_curves.size() == 0)
+	{
+		m_output << "Generate curves before print information." << std::endl;
+		return;
+	}
+
+	for (auto const& curve : m_curves)
+	{
+		m_output 
+			<< curve->ToString()
+			<< "Parameter t: " << t << std::endl
+			<< "Coordinate of point: " << curve->Get3DPoint(t) << std::endl
+			<< "First Derivative: " << curve->GetFirstDerivative(t) << std::endl << std::endl;
+	}
 }

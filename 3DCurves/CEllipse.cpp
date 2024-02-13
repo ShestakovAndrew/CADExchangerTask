@@ -1,3 +1,5 @@
+#include <sstream>
+
 #include "CEllipse.h"
 
 CEllipse::CEllipse(double radiusX, double radiusY) : m_radiusX(radiusX), m_radiusY(radiusY)
@@ -36,4 +38,16 @@ double CEllipse::GetHorizontalRadius() const noexcept
 double CEllipse::GetVerticalRadius() const noexcept
 {
 	return m_radiusY;
+}
+
+std::string CEllipse::ToString() const
+{
+	std::stringstream sstream;
+
+	sstream
+		<< "Type curve: Ellipse" << std::endl
+		<< "Horizontal Radius: " << GetHorizontalRadius() << std::endl
+		<< "Vertical Radius: " << GetVerticalRadius() << std::endl;
+
+	return sstream.str();
 }

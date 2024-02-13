@@ -23,9 +23,9 @@ public:
 		return !(p1 == p2);
 	}
 
-	std::ostream friend& operator<<(std::ostream& stream, CVector3D const& point)
+	std::ostream friend& operator<<(std::ostream& stream, CVector3D const& vector)
 	{
-		stream << std::format("x: {}, y: {}, z: {}", point.m_x, point.m_y, point.m_z);
+		stream << std::format("x: {}, y: {}, z: {}", vector.m_x, vector.m_y, vector.m_z);
 		return stream;
 	}
 
