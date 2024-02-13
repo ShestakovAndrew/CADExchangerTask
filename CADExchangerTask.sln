@@ -13,6 +13,9 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CurvesLibrary", "CurvesLibrary\CurvesLibrary.vcxproj", "{77E39CE0-0CA6-48A6-BA27-BCE3FDD78506}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CurvesClient", "CurvesClient\CurvesClient.vcxproj", "{92AA600E-A40F-4DD4-9493-416FCD242D98}"
+	ProjectSection(ProjectDependencies) = postProject
+		{77E39CE0-0CA6-48A6-BA27-BCE3FDD78506} = {77E39CE0-0CA6-48A6-BA27-BCE3FDD78506}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Task1-6", "Task1-6", "{EECEBC36-6680-49B6-B546-9A6D9B8D52AC}"
 EndProject
