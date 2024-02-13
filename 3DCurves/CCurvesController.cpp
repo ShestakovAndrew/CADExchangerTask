@@ -6,7 +6,9 @@
 #include "CEllipse.h"
 #include "CHelix.h"
 
-CCurvesController::CCurvesController(std::ostream& output) : m_output(output)
+CCurvesController::CCurvesController(std::ostream& output) 
+	: m_output(output)
+	, m_sumRadiusCurvesCircle(0)
 {
 }
 
@@ -20,7 +22,7 @@ void CCurvesController::GenerateRandomCurves()
 	std::random_device rd;
 	std::mt19937 gen(rd());
 
-	std::uniform_int_distribution<> randomCountCurvesDist(1, 20);
+	std::uniform_int_distribution<> randomCountCurvesDist(10, 20);
 	std::uniform_int_distribution<> randomCurvesTypeDist(0, 2);
 	std::uniform_real_distribution<double> randomRadiusDist(0, 20);
 	std::uniform_real_distribution<double> randomStepDist(0, 15);
@@ -37,6 +39,7 @@ void CCurvesController::GenerateRandomCurves()
 				m_circleCurves.emplace_back(
 					std::dynamic_pointer_cast<CCircle>(m_curves.back())
 				);
+				m_sumRadiusCurvesCircle += m_circleCurves.back()->GetRadius();
 				break;
 			}
 			case CurveType::ELLIPSE:
@@ -96,6 +99,11 @@ void CCurvesController::PrintCurvesPointAndDerivative(double t) const noexcept
 			<< "Coordinate of point: " << curve->Get3DPoint(t) << std::endl
 			<< "First Derivative: " << curve->GetFirstDerivative(t) << std::endl << std::endl;
 	}
+}
+
+void CCurvesController::PrintSumRadiiCurvesCircle() const noexcept
+{
+	m_output << "Sum of radii of circle curves: " << m_sumRadiusCurvesCircle << std::endl;
 }
 
 void CCurvesController::SortCircleCurves() noexcept
