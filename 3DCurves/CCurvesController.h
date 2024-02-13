@@ -24,6 +24,7 @@ public:
 	size_t GetCountCurves() const noexcept;
 	void PrintCircleCurvesInfo() const noexcept;
 	void PrintCurvesPointAndDerivative(double t) const noexcept;
+	void SortCircleCurves() noexcept;
 
 private:
 	std::ostream& m_output;

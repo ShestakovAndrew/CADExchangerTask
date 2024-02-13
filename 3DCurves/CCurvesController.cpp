@@ -97,3 +97,13 @@ void CCurvesController::PrintCurvesPointAndDerivative(double t) const noexcept
 			<< "First Derivative: " << curve->GetFirstDerivative(t) << std::endl << std::endl;
 	}
 }
+
+void CCurvesController::SortCircleCurves() noexcept
+{
+	std::sort(m_circleCurves.begin(), m_circleCurves.end(), 
+		[](auto const& lh, auto const& rh)
+		{
+			return lh->GetRadius() < rh->GetRadius();
+		}
+	);
+}

@@ -11,7 +11,8 @@ int main(int argc, char* argv)
 	curvesController.PrintCurvesPointAndDerivative(std::numbers::pi / 4);
 
 	curvesController.PrintCircleCurvesInfo();
-
+	curvesController.SortCircleCurves();
+	curvesController.PrintCircleCurvesInfo();
 
 	return 0;
 }
