@@ -7,8 +7,11 @@ int main(int argc, char* argv)
 	CCurvesController curvesController(std::cout);
 
 	curvesController.GenerateRandomCurves();
+	
+	curvesController.PrintCurvesPointAndDerivative(std::numbers::pi / 4);
 
-	curvesController.PrintCurvesInfo(std::numbers::pi / 4);
+	curvesController.PrintCircleCurvesInfo();
+
 
 	return 0;
 }

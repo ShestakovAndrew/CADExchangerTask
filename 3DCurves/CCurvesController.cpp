@@ -20,30 +20,33 @@ void CCurvesController::GenerateRandomCurves()
 	std::random_device rd;
 	std::mt19937 gen(rd());
 
-	std::uniform_int_distribution<> randomCountCurvesDist(1, 10);
+	std::uniform_int_distribution<> randomCountCurvesDist(1, 20);
 	std::uniform_int_distribution<> randomCurvesTypeDist(0, 2);
 	std::uniform_real_distribution<double> randomRadiusDist(0, 20);
 	std::uniform_real_distribution<double> randomStepDist(0, 15);
 
 	for (size_t i = 0; i < randomCountCurvesDist(gen); i++)
 	{
-		switch (static_cast<CCurvesController::CurveType>(randomCurvesTypeDist(gen)))
+		switch (static_cast<CurveType>(randomCurvesTypeDist(gen)))
 		{
-			case CCurvesController::CurveType::CIRCLE:
+			case CurveType::CIRCLE:
 			{
 				m_curves.push_back(std::make_shared<CCircle>
 					(randomRadiusDist(gen))
 				);
+				m_circleCurves.emplace_back(
+					std::dynamic_pointer_cast<CCircle>(m_curves.back())
+				);
 				break;
 			}
-			case CCurvesController::CurveType::ELLIPSE:
+			case CurveType::ELLIPSE:
 			{
 				m_curves.push_back(std::make_shared<CEllipse>
 					(randomRadiusDist(gen), randomRadiusDist(gen))
 				);
 				break;
 			}
-			case CCurvesController::CurveType::HELIX:
+			case CurveType::HELIX:
 			{
 				m_curves.push_back(std::make_shared<CHelix>
 					(randomRadiusDist(gen), randomStepDist(gen))
@@ -52,9 +55,7 @@ void CCurvesController::GenerateRandomCurves()
 			}
 			default:
 			{
-				m_curves.push_back(std::make_shared<CCircle>
-					(randomRadiusDist(gen))
-				);
+				throw std::logic_error("Error create random curve.");
 			}
 		}
 	}
@@ -65,7 +66,21 @@ size_t CCurvesController::GetCountCurves() const noexcept
 	return m_curves.size();
 }
 
-void CCurvesController::PrintCurvesInfo(double t) const noexcept
+void CCurvesController::PrintCircleCurvesInfo() const noexcept
+{
+	if (m_circleCurves.size() == 0)
+	{
+		m_output << "No circles curves for print information." << std::endl;
+		return;
+	}
+
+	for (auto const& circleCurve : m_circleCurves)
+	{
+		m_output << circleCurve->ToString() << std::endl;
+	}
+}
+
+void CCurvesController::PrintCurvesPointAndDerivative(double t) const noexcept
 {
 	if (m_curves.size() == 0)
 	{
