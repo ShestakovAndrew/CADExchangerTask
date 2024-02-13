@@ -136,6 +136,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="CCircle.h" />
+    <ClInclude Include="CCurvesController.h" />
     <ClInclude Include="ICurve3D.h" />
     <ClInclude Include="CEllipse.h" />
     <ClInclude Include="CHelix.h" />
@@ -144,6 +145,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CCircle.cpp" />
+    <ClCompile Include="CCurvesController.cpp" />
     <ClCompile Include="CEllipse.cpp" />
     <ClCompile Include="CHelix.cpp" />
     <ClCompile Include="main.cpp" />

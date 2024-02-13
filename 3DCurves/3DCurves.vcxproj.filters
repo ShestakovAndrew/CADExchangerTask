@@ -42,6 +42,9 @@
     <ClInclude Include="CHelix.h">
       <Filter>Файлы заголовков\Curves\CurvesImpl</Filter>
     </ClInclude>
+    <ClInclude Include="CCurvesController.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CEllipse.cpp">
@@ -54,6 +57,9 @@
       <Filter>Исходные файлы\Curves</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="CCurvesController.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
